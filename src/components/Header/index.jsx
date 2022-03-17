@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Container } from '../Container';
+import { StyledHeader, FlexContainer,ButtonGroup  } from './style';
 import { LinkBtn } from '../UI/LinkBtn';
 import { pagination } from '../../utils/pagination';
 
@@ -26,26 +25,3 @@ export const Header = ({ pages, activePage, changePage }) => {
 	);
 };
 
-const StyledHeader = styled.header`
-	background: var(--color-header);
-	padding: 15px 0;
-	h1 {
-		color: var(--color-text);
-		font-size: var(--fs-md);
-		font-weight: var(--fw-normal);
-	}
-`;
-
-const ButtonGroup = styled.ul`
-	list-style: none;
-	display: flex;
-	gap: 0 11px;
-	align-items: center;
-	justify-content: center;
-`;
-
-const FlexContainer = styled(Container)`
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-`;

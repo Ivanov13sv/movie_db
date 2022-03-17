@@ -1,10 +1,8 @@
 import styled from 'styled-components';
-import { MovieItem } from '../MovieItem';
+import { MovieItem } from '../MovieItem/index';
 import { Container } from '../Container';
 
-
 export const Main = ({movieList}) => {
-
 
 	return (
 		<StyledMain>
@@ -26,4 +24,7 @@ const FlexContainer = styled(Container)`
 	flex-wrap: wrap;
 	gap: 4.3rem 3rem;
 	justify-content: center;
+	@media (max-width: 650px){
+		gap: 2.3rem 1rem;
+	}
 `;

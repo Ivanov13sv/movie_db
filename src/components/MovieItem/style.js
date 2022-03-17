@@ -1,48 +1,13 @@
-import styled from 'styled-components';
-import { ReactComponent as Star } from '../../img/icons/star.svg';
-import { Link } from 'react-router-dom';
-import { useImageError } from '../../hooks/useImageError';
+import styled from 'styled-components'
 
 
-export const MovieItem = ({ movie }) => {
-
-	const { id, title, year, genres = [], rating, large_cover_image } = movie;
-	const [isError, img] = useImageError(large_cover_image);
-
-	const shortTitle = title.length > 30 ? `${title.slice(0, 30)}...` : title;
-
-	return (
-		<Movie>
-			<MovieBody>
-				<img onError={isError} src={img} alt={title} />
-				<MovieInfo>
-					<MovieRating>
-						<Star />
-						<span>{rating}</span>
-					</MovieRating>
-					<div>
-						{genres.map((item) => (
-							<h3 key={id + item}>{item}</h3>
-						))}Movie
-					</div>
-					<Link to={`/movies/${id}`}>More</Link>
-				</MovieInfo>
-			</MovieBody>
-
-			<MovieFooter>
-				<h5>{shortTitle}</h5>
-				<span>{year}</span>
-			</MovieFooter>
-		</Movie>
-	);
-};
-
-const Movie = styled.li`
+export const Movie = styled.li`
 	list-style: none;
 	img {
 	}
 `;
-const MovieInfo = styled.div`
+
+export const MovieInfo = styled.div`
 	-webkit-touch-callout: none; /* iOS Safari */
 	-webkit-user-select: none; /* Chrome/Safari/Opera */
 	-khtml-user-select: none; /* Konqueror */
@@ -96,7 +61,7 @@ const MovieInfo = styled.div`
 	}
 `;
 
-const MovieBody = styled.div`
+export const MovieBody = styled.div`
 	position: relative;
 	border: 5px solid #ffffff;
 	border-radius: var(--border-radius);
@@ -116,7 +81,7 @@ const MovieBody = styled.div`
 	}
 `;
 
-const MovieFooter = styled.div`
+export const MovieFooter = styled.div`
 	color: var(--color-text);
 	font-weight: var(--fw-light);
 	h5 {
@@ -132,7 +97,7 @@ const MovieFooter = styled.div`
 	}
 `;
 
-const MovieRating = styled.div`
+export const MovieRating = styled.div`
 	padding: 5px 0 0 0;
 
 	display: flex;

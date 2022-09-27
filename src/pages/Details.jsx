@@ -35,6 +35,7 @@ export const Details = () => {
 
 	useEffect(() => {
 		fetching();
+		// eslint-disable-next-line
 	}, []);
 
 	const content = errorMessage ? (
